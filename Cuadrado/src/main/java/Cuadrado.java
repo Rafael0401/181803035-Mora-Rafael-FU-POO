@@ -8,6 +8,5 @@ public class Cuadrado {
         area=a*a;
         System.out.println("El area del cuadrado es de: "+area);
         
-        
     }
 }
