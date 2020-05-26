@@ -188,9 +188,9 @@ public class DosFechas {
                     dias_años *= 365;
                            
                      if(año1<año2){
-                         System.out.println("total de dias son: " + (dias_meses + dias + dias_años) + " dias");
+                         System.out.println(" total de dias son: " + (dias_meses + dias + dias_años) + " dias");
                      }
                      else
-                       System.out.println("total de dias son: " + (dias_meses - dias + dias_años) + " dias");
+                       System.out.println(" total de dias son: " + (dias_meses - dias + dias_años) + " dias");
     }
 }
