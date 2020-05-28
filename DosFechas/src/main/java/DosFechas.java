@@ -183,19 +183,14 @@ public class DosFechas {
 
                     }
 
-                    System.out.println("<br><br>Dias: " + dias);
-
                     dias_meses = Math.abs(dias_meses);
-                     System.out.println("<br><br>Meses: " + dias_meses + " en dias");
-
+                   
                     dias_años *= 365;
-
-                     System.out.println("<br><br>Años: " + dias_años + " en dias");
-                     
+                           
                      if(año1<año2){
-                         System.out.println("<br><br>----- El total de dias son: " + (dias_meses + dias + dias_años) + " dias -----");
+                         System.out.println(" total de dias son: " + (dias_meses + dias + dias_años) + " dias");
                      }
                      else
-                       System.out.println("<br><br>----- El total de dias son: " + (dias_meses - dias + dias_años) + " dias -----");
+                       System.out.println(" total de dias son: " + (dias_meses - dias + dias_años) + " dias");
     }
 }
