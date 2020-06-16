@@ -11,6 +11,7 @@ public class Tarjeta {
     int cv;
     double monto;
     double apartado;
+    double inversion;
 
     //Metodo vacio
     public Tarjeta() {
@@ -18,7 +19,7 @@ public class Tarjeta {
     }
 
     // Metodo con parametros
-    public Tarjeta(double noCuenta, String nombre, int nip, int dia, int mes, int anio, int cv, double monto, double apartado) {
+    public Tarjeta(double noCuenta, String nombre, int nip, int dia, int mes, int anio, int cv, double monto, double apartado, double inversion) {
         this.noCuenta = noCuenta;
         this.nombre = nombre;
         this.nip = nip;
@@ -28,17 +29,18 @@ public class Tarjeta {
         this.anio = anio;
         this.monto = monto;
         this.apartado = apartado;
+        this.inversion = inversion;
     }
 
     //metodo para verificar el dueño de la cuenta introducida
     public Tarjeta verificarCuenta(int noCuenta, int nip) {
         if (noCuenta == 123123 && nip == 1133) {
             //se regresan los parametros establecidos
-            return new Tarjeta(123123, "Eduardo Diaz Flores", 1133, 31, 12, 2032, 543, 45987.52, 550);
+            return new Tarjeta(123123, "Eduardo Diaz Flores", 1133, 31, 12, 2032, 543, 45987.52, 550, 0);
 
         } else if (noCuenta == 456789 && nip == 3377) {
             //se regresan los parametros establecidos
-            return new Tarjeta(456789, "Kevin Meza Gonzales", 3377, 31, 12, 2032, 544, 360, 5322.23);
+            return new Tarjeta(456789, "Kevin Meza Gonzales", 3377, 31, 12, 2032, 544, 360, 5322.23, 0);
 
         } else {
             return new Tarjeta();
@@ -60,7 +62,7 @@ public class Tarjeta {
         }
 
     }
-    
+
 //metodo para restar el saldo apartado establecido y sumar lo restado al monto 
     public void eliminar(double apartado) {
         if (apartado <= this.apartado && apartado >= 0) {
@@ -72,6 +74,31 @@ public class Tarjeta {
 
     }
 
+    public void crearApartado(double apartado) {
+        if (apartado <= this.monto && apartado >= 0) {
+            this.apartado += apartado;
+            this.monto -= apartado;
+        } else {
+            System.out.println("Error la cantidad introducida supera al saldo actual");
+        }
+    }
+
+    public void invertir(double inversion) {
+        if (inversion <= this.monto && inversion > 0) {
+            this.inversion += inversion;
+            this.monto -= inversion;
+        } else {
+            System.out.println("Error la cantidad introducida supera al saldo actual");
+        }
+
+    }
+
+    public void retirarInversion(double inversion) {
+
+        this.inversion -= inversion;
+        this.monto += inversion;
+    }
+
     //metodo para sumar el monto con el saldo apartado
     public double Total() {
         return this.monto + this.apartado;
@@ -79,7 +106,7 @@ public class Tarjeta {
 
     @Override
     public String toString() {
-        return "Numero de cuenta: " + noCuenta + "\nNombre: " + nombre + "\nNip: " + nip + "\nClave de seguridad: " + cv + "\nDia, mes y año de vencimiento: " + dia + "/" + mes + "/" + anio + "\nSaldo: " + monto + "$" + "\nApartado: " + apartado + "$" + "\nSaldo total: " + this.Total() + "$";
+        return "Numero de cuenta: " + noCuenta + "\nNombre: " + nombre + "\nNip: " + nip + "\nClave de seguridad: " + cv + "\nDia, mes y año de vencimiento: " + dia + "/" + mes + "/" + anio + "\nSaldo: " + monto + "$" + "\nApartado: " + apartado + "$" + "\nSaldo en inversion: " + inversion + "$" + "\nSaldo total: " + this.Total() + "$";
     }
 
 }

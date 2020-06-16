@@ -1,56 +1,45 @@
 
+import java.util.Scanner;
+
 public class MainJuego {
 
     public static void main(String[] args) {
-        AK bronce = new AK("Bronce", 5 , 75, 5, 1000, 10, 10);
-        bronce.tipo = "Bronce";
-        bronce.cargador = 5;
-        bronce.precision = 75;
-        bronce.velocidadCarga = 5;
-        bronce.precio = 1000;
-        bronce.danio = 10;
-        bronce.velocidadDisparo = 10;
-        System.out.println(bronce.toString());
-        System.out.println(bronce.disparar());
+        Scanner leer = new Scanner(System.in);
+        Ak ak= new Ak();
+        int valor, i = 1;
+        while (i < 3) {
+            if (i == 1) {
+                System.out.println("         MENU");
+                System.out.println("Jugador "+i+" elija la categoria del arma");
+                System.out.println("1) Bronce");
+                System.out.println("2) Plata");
+                System.out.println("3) Oro");
+                System.out.println("4) Diamante");
+                System.out.println("5) Adamantium");
+                valor = leer.nextInt();
+                Personaje p1 = new Personaje("Samuel");
+                p1.equiparArma(valor);
+                System.out.println(p1);
+                System.out.println(p1.disparar());
+  
+                i++;
+            }else{
+                 System.out.println("         MENU");
+                System.out.println("Jugador "+i+" elija la categoria del arma");
+                System.out.println("1) Bronce");
+                System.out.println("2) Plata");
+                System.out.println("3) Oro");
+                System.out.println("4) Diamante");
+                System.out.println("5) Adamantium");
+                valor = leer.nextInt();
+                Personaje p2 = new Personaje("Rafael");
+                p2.equiparArma(valor);
+                System.out.println(p2);
+                System.out.println(p2.disparar());
+                i++;
+            }
 
-        AK plata = new AK();
-        plata.tipo = "Plata";
-        plata.cargador = 8;
-        plata.precision = 70;
-        plata.velocidadCarga = 4.5;
-        plata.precio = 2300;
-        plata.danio = 11;
-        plata.velocidadDisparo = 9.8;
-        System.out.println(plata.toString());
-
-        AK oro = new AK();
-        oro.tipo = "Oro";
-        oro.cargador = 10;
-        oro.precision = 85;
-        oro.velocidadCarga = 4.3;
-        oro.precio = 2500;
-        oro.danio = 13;
-        oro.velocidadDisparo = 9.7;
-        System.out.println(oro.toString());
-
-        AK diamante = new AK();
-        diamante.tipo = "Diamante";
-        diamante.cargador = 20;
-        diamante.precision = 95;
-        diamante.velocidadCarga = 3;
-        diamante.precio = 4000;
-        diamante.danio = 20;
-        diamante.velocidadDisparo = 9.4;
-        System.out.println(diamante.toString());
-
-        AK adamantium = new AK();
-        adamantium.tipo = "Adamantium";
-        adamantium.cargador = 30;
-        adamantium.precision = 100;
-        adamantium.velocidadCarga = 1;
-        adamantium.precio = 10000;
-        adamantium.danio = 27;
-        adamantium.velocidadDisparo = 8;
-        System.out.println(adamantium.toString());
+        }
+        
     }
 }
