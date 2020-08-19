@@ -1,0 +1,9 @@
+
+
+Nombre : 1
+Apellidos: 1
+Genero: 1
+Edad: 1
+Matricula: 1
+Grupo: 1
+Carrera: 1
